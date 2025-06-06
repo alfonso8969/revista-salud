@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Revista Salud</title>
     <style>
-        header {
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100vh;
+      }
+
+      header {
         background-color: #333;
         color: #fff;
         padding: 10px;
@@ -24,16 +38,752 @@
       header img {
         margin-left: 10px;
       }
- 
+
+      nav {
+        background-color: #1523e6;
+        color: #fff;
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 20px;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      #content {
+        grid-column: 2 / 3;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      section {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 980px;
+      }
+
+      article {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #e9ecef;
+        border-bottom: 2px solid #ccc;
+        border-radius: 5px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ads-vertical {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+
+      #sidebar {
+        position: sticky;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      #sidebar h3 {
+        margin-top: 0;
+      }
+
+      #sidebar a {
+        color: #248ae9;
+        text-decoration: none;
+      }
+
+      #sidebar a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        clear: both;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer p {
+        margin: 10px;
+      }
+
+      footer a {
+        margin-right: 20px;
+        color: #23eef5;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        transition: color 0.3s;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      section h2 {
+        color: #1523e6;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      section p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      ol {
+        list-style: none;
+        counter-reset: item;
+      }
+
+      ol li {
+        counter-increment: item;
+        margin-bottom: 5px;
+      }
+
+      ol li:before {
+        margin-right: 10px;
+        content: counter(item);
+        background: lightblue;
+        border-radius: 100%;
+        color: white;
+        width: 1.2em;
+        text-align: center;
+        display: inline-block;
+      }
+
+      ol li:hover {
+        background-color: #f0f0f0;
+        transition: background-color 0.3s ease;
+        background-color: #23eef5;
+      }
+
+      details {
+        margin-bottom: 10px;
+      }
+
+      details summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #b13e2a;
+        font-size: 20px;
+      }
+
+      .fa-facebook {
+        color: #3b5998;
+      }
+
+      .fa-twitter {
+        color: #1da1f2;
+      }
+
+      .fa-instagram {
+        color: #c32aa3;
+      }
+
+      .fa-youtube {
+        color: #ff0000;
+      }
+
+      .rs a {
+        color: #6563bb;
+        text-decoration: none;
+      }
+
+      .figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .figure-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      .li {
+        margin-bottom: 10px;
+      }
+
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      h1 {
+        font-size: 32px;
+        color: #1523e6;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .cabecera {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #1523e6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        transition: background-color 0.3s ease;
+        background-color: #278f0d;
+      }
+      
+      .more-info {
+        margin-top: 20px;
+      }
+
+      .more-info a {
+        text-decoration: none;
+        color: #17181b;
+      }
+
+      .more-info img:hover {
+        transition: width 0.3s ease, height 0.3s ease;
+        width: 320px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Revista Salud</h1>
-        <img src="images/logo.png" width="100px" alt="">
+      <h1>Revista Salud</h1>
+      <img
+        src="images/logo.png"
+        alt="Logo de la Revista Salud"
+        width="50"
+        height="50"
+      />
     </header>
     <nav>
-        
+      <ul>
+        <li>
+          <a href="#section1">Actualidad</a>
+        </li>
+        <li>
+          <a href="#section2">Salud</a>
+        </li>
+        <li>
+          <a href="#section3">Nutrición</a>
+        </li>
+        <li>
+          <a href="#section4">Psicología</a>
+        </li>
+        <li>
+          <a href="#section5">Consumo</a>
+        </li>
+        <li>
+          <a href="#section6">Ejercicios</a>
+        </li>
+        <li>
+          <a href="#section7">Videos</a>
+        </li>
+      </ul>
     </nav>
-</body>
+    <main>
+      <aside id="sidebar">
+        <h2>Artículos relacionados</h2>
+        <ol class="">
+          <li class="li">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <a href="#section2">Tipos de miel</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-beer" aria-hidden="true"></i>
+            <a href="#section3">Beneficios de la miel</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-history" aria-hidden="true"></i>
+            <a href="#section4">Cómo almacenar la miel</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-question" aria-hidden="true"></i>
+            <a href="#section5">Cómo usar la miel</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-print" aria-hidden="true"></i>
+            <a href="#section6">¿Cómo preparar la miel?</a>
+          </li>
+        </ol>
+      </aside>
+      <aside id="content">
+        <h1>Revista Salud</h1>
+        <p class="cabecera">
+          Esta revista se dedica a la salud y la nutrición, con el objetivo de
+          brindar información útil y actualizada sobre el bienestar de las
+          personas y el crecimiento sostenible de la comunidad.
+        </p>
+        <q
+          cite="https://www.abc.es/salud/20230315/beneficios-miel-20230315104512.html"
+          >“La miel es un alimento con propiedades beneficiosas para la
+          salud”</q
+        >
+        <cite>Fuente: ABC Salud</cite>
+
+        <section id="section1">
+          <h2>Todos los secretos de la miel</h2>
+          <p>
+            La miel, como de buen seguro sabrás, se caracteriza por ser un
+            producto de origen natural con una textura viscosa y un sabor muy
+            dulce, el cual es producido por las abejas a partir del néctar de
+            las flores y secreciones de partes vivas de las plantas, o bien a
+            partir de excreciones de insectos chupadores de plantas.
+          </p>
+          <img
+            src="images/miel1.png"
+            alt="Miel"
+            width="100%"
+            height="auto"
+          />
+          <p>
+            Es un producto natural y popular de las abejas, quienes la recogen,
+            la transforman y la combinan en su interior con la enzima invertasa,
+            una enzima que digiere carbohidratos que contiene la saliva de las
+            abejas y es almacenada en los panales, lugar donde madura. En el
+            interior de las abejas el néctar se condensa por medio de la acción
+            del amasado del producto y de una serie determinada de fermentos.
+          </p>
+          <p>
+            Utilizar la miel en nuestra alimentación puede ser una forma activa
+            de mejorar la salud. Aprovecha las oportunidades que nos ofrece este
+            dulce regalo de las abejas. Recuerda que como decía el filósofo
+            griego Hippocrates: “sanar es una cuestión de tiempo, pero a veces
+            también es cuestión de oportunidad”.
+          </p>
+        </section>
+        <section id="section2">
+          <h2>Algunos tipos de miel</h2>
+          <p>
+            Las distintas formas de comercializar la miel dan lugar a una amplia
+            gama de tipos de mieles. A continuación, te presentamos los
+            principales tipos de miel que existen.
+          </p>
+          <details>
+            <summary>Miel de panal</summary>
+            <img
+              src="images/miel_panal.jpg"
+              alt="Miel de panal"
+              width="200"
+              height="200"
+            />
+            <p>
+              Miel que se encuentra aún en los panales no desoperculados,
+              construidos por las abejas.
+            </p>
+          </details>
+          <details>
+            <summary>Miel virgen o Miel de gota</summary>
+            <img
+              src="images/miel_gota.jpg"
+              alt="Miel de gota"
+              width="200"
+              height="200"
+            />
+            <p>
+              Producto que fluye espontáneamente de los panales o alzas melarias
+              que nunca han contenido cría, cosechada por medios mecánicos
+              (extractor o centrífuga).
+            </p>
+          </details>
+          <details>
+            <summary>Miel cruda</summary>
+            <img
+              src="images/miel_cruda.jpg"
+              alt="Miel cruda"
+              width="200"
+              height="200"
+            />
+            <p>
+              Producto natural tal cual se extrae del panal, sin ser calentado.
+            </p>
+          </details>
+          <details>
+            <summary>Miel centrifugada</summary>
+            <img
+              src="images/miel_centrifugada.avif"
+              alt="Miel centrifugada"
+              width="300"
+              height="300"
+            />
+            <p>
+              La miel centrifugada es aquella que se extrae de los panales
+              mediante un proceso mecánico llamado centrifugación, sin que el
+              panal sea destruido. Este método permite obtener miel de alta
+              calidad, conservando todas sus propiedades naturales.
+            </p>
+          </details>
+          <details>
+            <summary>Miel prensada</summary>
+            <img
+              src="images/miel_prensada.jpg"
+              alt="Miel prensada"
+              width="300"
+              height="300"
+            />
+            <p>
+              Es una miel que se extrae de los panales mediante un proceso
+              manual de prensado, sin usar calor ni centrifugadoras. Es una
+              forma más tradicional y artesanal de obtención de miel, muy
+              valorada por quienes buscan un producto lo más natural posible.
+            </p>
+          </details>
+          <details>
+            <summary>Miel sobrecalentada</summary>
+            <img
+              src="images/miel_sobrecalentada.jpg"
+              alt="Miel sobrecalentada"
+              width="200"
+              height="200"
+            />
+            <p>
+              Es aquella que ha sido expuesta a temperaturas elevadas de forma
+              excesiva o prolongada, generalmente durante procesos industriales
+              como el envasado, el filtrado o la pasteurización. Este
+              sobrecalentamiento puede alterar significativamente la calidad y
+              las propiedades de la miel.
+            </p>
+          </details>
+          <details>
+            <summary>Miel batida</summary>
+            <img
+              src="images/miel_batida.jpg"
+              alt="Miel batida"
+              width="200"
+              height="200"
+            />
+            <p>
+              La miel batida, también conocida como miel cremosa o miel
+              cremigada, es una miel que ha sido sometida a un proceso
+              controlado de cristalización para obtener una textura suave,
+              untuosa y uniforme, similar a la de una crema.
+            </p>
+          </details>
+        </section>
+        <section id="section3">
+          <h2>Beneficios más importantes de la miel</h2>
+          <p>
+            Muy rica en nutrientes esenciales: destaca su riqueza en vitaminas
+            como la vitamina <strong>A, C, D, B1, B2, B3, B5 y B6;</strong> y en minerales y
+            oligoelementos como el cobre, magnesio, hierro, fósforo, potasio,
+            azufre, calcio, sodio y manganeso. Además, también aporta ácidos
+            orgánicos como el ácido acético y el ácido cítrico.
+          </p>
+          <img src="images/nutrientes_miel.jpg" alt="Nutrientes de la miel" width="100%" height="auto" />
+          <p>
+            Ayuda a reforzar el sistema inmunológico: la miel es un alimento
+            natural muy rico en nutrientes esenciales, con acción como
+            antioxidante gracias a su contenido en flavonoides, que son
+            pigmentos naturales presentes en los vegetales y que protegen al
+            organismo del daño producido por agentes oxidantes, como los rayos
+            ultravioletas o la polución ambiental.
+          </p>
+          <p>
+            Excelente contra gripes y resfriados: la miel actúa como
+            antioxidante antiviral y antimicrobiano, por ello se convierte en un
+            remedio tradicional muy popular en caso de gripes y resfriados.
+          </p>
+          <p>
+            Ideal contra los dolores de garganta, la tos y enfermedades
+            respiratorias: dado que la miel actúa como antioxidante antiviral,
+            antimicrobiano y antiinflamatorio, resulta ideal a la hora de calmar
+            el dolor de garganta. Además, dependiendo del tipo de miel (como por
+            ejemplo es el caso de la miel de romero y eucalipto), ayuda a
+            aliviar la mucosidad y la congestión nasal.
+          </p>
+          <p>
+            Ayuda a descansar mejor: el azúcar presente en la miel ayuda a que
+            el triptófano entre en el cerebro con mayor facilidad, lo que
+            permite la secreción de melatonina, fundamental para la regulación
+            diaria del sueño-vigilia. Por ello resulta ideal tomar un vaso de
+            leche caliente con miel antes de irnos a la cama.
+          </p>
+          <p>
+            Regula el azúcar en la sangre: gracias a su equilibrio entre
+            fructosa y glucosa cuando consumimos miel la porción de fructosa
+            permite que la glucosa sea captada por el hígado, por lo que ayuda a
+            eliminar la glucosa de la circulación sanguínea y reduce el azúcar
+            en la sangre. No obstante, debemos tener presente que se trata de un
+            alimento contraindicado en personas con diabetes.
+          </p>
+          <p>
+            Actúa contra el estreñimiento: dado que la miel es muy rica en
+            fructooligosacáridos, actúa con un efecto laxante suave y natural,
+            siendo útil en caso de estreñimiento.
+          </p>
+          <p>
+            <em>Dormir y descansar mejor por las noches:</em> un remedio tradicional
+            consiste en tomar un vaso o taza de leche caliente con un 1 o 2
+            cucharadas de miel, consumida una o dos horas antes de irnos a la
+            cama.
+          </p>
+        </section>
+        <section id="section4">
+          <h2>Cómo almacenar la miel</h2>
+          <p>
+            Almacenar miel es un proceso muy simple. Para mantener la miel
+            fresca, debes encontrar un recipiente adecuado donde guardarla, y
+            mantenerlo en un lugar fresco y seco. Si deseas almacenar miel para
+            un uso a largo plazo, puedes congelarla y posteriormente derretirla.
+          </p>
+          <img src="images/almacenamiento_miel.jpg" alt="Almacenamiento de la miel" width="100%" height="300" />
+          <p>
+            Elige un ambiente con temperatura constante. La miel se conserva
+            mejor a una temperatura entre <strong>10 y 20 °C (50 y 70 °F)</strong>. Las
+            variaciones en la temperatura podrían hacer que la miel se oscurezca
+            y pierda sabor. Cuando almacenes miel, elige un lugar que tenga la
+            temperatura adecuada y que esta no tienda a cambiar.
+          </p>
+          <p>
+            Además podemos determinar que una miel almacenada a temperatura
+            correcta tendrá una densidad de alrededor de 1,44
+            gr./cm<sup>3</sup>.
+          </p>
+        </section>
+        <section id="section5">
+          <h2>Cómo usar la miel</h2>
+          <p>
+            La miel es un ingrediente versátil que se puede utilizar de muchas
+            maneras en la cocina y en el hogar. Aquí hay algunas ideas:
+          </p>
+          <img src="images/como_usar_miel.jpg" alt="Cómo usar la miel" width="100%" height="300" />
+          <ul>
+            <li>
+              <strong>Endulzante natural:</strong> Utiliza miel en lugar de azúcar
+              en tus bebidas y recetas de repostería.
+            </li>
+            <li>
+              <strong>Aderezo para ensaladas:</strong> Mezcla miel con aceite de
+              oliva y vinagre para hacer un aderezo delicioso.
+            </li>
+            <li>
+              <strong>Remedio casero:</strong> La miel se puede usar para aliviar
+              la tos y el dolor de garganta. Mezcla una cucharada de miel con
+              limón en agua caliente.
+            </li>
+            <li>
+              <strong>Hidratante natural:</strong> Aplica miel en la piel como
+              mascarilla hidratante.
+            </li>
+          </ul>
+        </section>
+        <section id="section6" class="videos-youtube">
+          <h2>Videos sobre la miel</h2>
+          <p>
+            Aquí tienes algunos videos interesantes sobre la miel y sus
+            beneficios:
+          </p>
+          <figure>
+            <iframe src="https://www.youtube.com/embed/RF2ZaWByZVk" title="COMO se HACE la MIEL de ABEJA🍯| Como HACEN la MIEL las ABEJAS 🐝" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen width="1000" height="500"></iframe>
+            <figcaption>Beneficios de la miel</figcaption>
+          </figure>
+         </section>
+      </aside>
+      <aside id="ads" class="ads-vertical">
+        <div class="ads">
+          <div>
+            <h3>Anuncios</h3>
+            <p>Aquí podrías insertar anuncios o enlaces patrocinados.</p>
+            <img
+              src="images/miel4.jpg"
+              alt="Anuncio"
+              width="100%"
+              height="200"
+            />
+          </div>
+          <div class="more-info">
+            <a href="https://www.example.com/more-info" target="_blank" rel="noopener noreferrer">
+              <h3>Más información</h3>
+              <p>
+                Para más detalles sobre la miel y sus beneficios, visita nuestro
+                sitio web.
+              </p>
+              <img
+                src="images/more_info.avif"
+                alt="Más información"
+                width="300"
+                height="100"
+              />
+            </a >
+          </div>
+          <div>
+            <h3>Contacto</h3>
+            <p>
+              Si tienes alguna pregunta o comentario, no dudes en ponerte en
+              contacto con nosotros.
+            </p>
+            <form>
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" required />
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+              <label for="message">Mensaje:</label>
+              <textarea id="message" name="message" required></textarea>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <p>
+        Revista Salud&copy; <span id="year"></span> todos los derechos
+        reservados.
+      </p>
+      <div class="d-inline mx-0 rs">
+        <p>
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <a
+            href="https://www.facebook.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Facebook</a
+          >
+        </p>
+        <p style="margin-right: 10px; margin-bottom: -10px">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+            />
+          </svg>
+          <a
+            href="https://twitter.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Twitter</a
+          >
+        </p>
+        <p>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <a
+            href="https://www.instagram.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+        </p>
+        <p>
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+          <a
+            href="https://www.youtube.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube</a
+          >
+        </p>
+      </div>
+      <address>
+        <strong>Contacto:</strong>
+        <p>
+          <a
+            href="mailto:contact@revistasalud.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >contact@revistasalud.com</a
+          >
+        </p>
+        <p><strong>Teléfono:</strong> +57 312 345 6789</p>
+        <p><strong>Dirección:</strong> Calle 123, 456, Barrio 789</p>
+        <p>
+          <strong>Horario de atención:</strong> Lunes a Viernes 9:00 AM a 5:00
+          PM
+        </p>
+        <p>
+          <strong>Email de soporte técnico:</strong> support@revistasalud.com
+        </p>
+      </address>
+      <a href="https://www.casika.com" target="_blank" rel="noopener noreferrer"
+        >Revista salud
+        <img
+          src="images/logo.png"
+          alt="Logo de Revista Salud"
+          width="30"
+          height="30"
+          class="mx-1"
+        />
+      </a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/6fbdbd90cc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Obtener el año actual
+      const currentYear = new Date().getFullYear();
+      // Asignar el año al elemento con el id "year"
+      document.getElementById("year").textContent = currentYear;
+    </script>
+  </body>
 </html>
