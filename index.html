@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Revista Salud</title>
     <style>
       body {
@@ -92,11 +92,6 @@
         background-color: #e9ecef;
         border-bottom: 2px solid #ccc;
         border-radius: 5px;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
       }
 
       .ads-vertical {
@@ -330,6 +325,53 @@
       #scrollToTop:hover {
         background-color: #3e8e41;
       }
+
+      .secondary-nav {
+        background-color: #e0e0e0;
+        padding: 12px 0;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        text-align: center;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .secondary-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .secondary-nav li {
+        display: inline;
+        margin: 30px;
+      }
+
+      .secondary-nav a {
+        color: #222;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 6px 12px;
+        border-radius: 3px;
+      }
+
+      .secondary-nav a:hover {
+        color: #455777;
+      }
+
+      .header-content {
+        font-size: 36px;
+        font-weight: bold;
+        color: #1523e6;
+        color: #1523e6;
+        margin-bottom: 10px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -354,13 +396,10 @@
           <a href="#section3">Nutrición</a>
         </li>
         <li>
-          <a href="#section4">Psicología</a>
+          <a href="#section4">Almacenamiento</a>
         </li>
         <li>
           <a href="#section5">Consumo</a>
-        </li>
-        <li>
-          <a href="#section6">Ejercicios</a>
         </li>
         <li>
           <a href="#section7">Videos</a>
@@ -388,13 +427,21 @@
             <a href="#section5">Cómo usar la miel</a>
           </li>
           <li class="li">
-            <i class="fa fa-print" aria-hidden="true"></i>
-            <a href="#section6">¿Cómo preparar la miel?</a>
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            <a href="#section7">Videos sobre la miel</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <a href="#more-info">Más información</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <a href="#contact">Contacto</a>
           </li>
         </ol>
       </aside>
       <aside id="content">
-        <h1>Revista Salud</h1>
+        <h2 class="header-content">Revista Salud</h2>
         <p class="cabecera">
           Esta revista se dedica a la salud y la nutrición, con el objetivo de
           brindar información útil y actualizada sobre el bienestar de las
@@ -416,7 +463,13 @@
             las flores y secreciones de partes vivas de las plantas, o bien a
             partir de excreciones de insectos chupadores de plantas.
           </p>
-          <img src="images/miel1.png" alt="Miel" width="100%" height="auto" />
+          <img
+            src="images/miel1.png"
+            width="1000"
+            height="400"
+            title="Todos los secretos de la miel"
+            alt="Todos los secretos de la miel"
+          />
           <p>
             Es un producto natural y popular de las abejas, quienes la recogen,
             la transforman y la combinan en su interior con la enzima invertasa,
@@ -445,8 +498,8 @@
             <img
               src="images/miel_panal.jpg"
               alt="Miel de panal"
-              width="200"
-              height="200"
+              width="500"
+              height="400"
             />
             <p>
               Miel que se encuentra aún en los panales no desoperculados,
@@ -458,8 +511,8 @@
             <img
               src="images/miel_gota.jpg"
               alt="Miel de gota"
-              width="200"
-              height="200"
+              width="500"
+              height="400"
             />
             <p>
               Producto que fluye espontáneamente de los panales o alzas melarias
@@ -472,8 +525,8 @@
             <img
               src="images/miel_cruda.jpg"
               alt="Miel cruda"
-              width="200"
-              height="200"
+              width="500"
+              height="400"
             />
             <p>
               Producto natural tal cual se extrae del panal, sin ser calentado.
@@ -484,8 +537,8 @@
             <img
               src="images/miel_centrifugada.avif"
               alt="Miel centrifugada"
-              width="300"
-              height="300"
+              width="500"
+              height="400"
             />
             <p>
               La miel centrifugada es aquella que se extrae de los panales
@@ -499,8 +552,8 @@
             <img
               src="images/miel_prensada.jpg"
               alt="Miel prensada"
-              width="300"
-              height="300"
+              width="500"
+              height="400"
             />
             <p>
               Es una miel que se extrae de los panales mediante un proceso
@@ -514,8 +567,8 @@
             <img
               src="images/miel_sobrecalentada.jpg"
               alt="Miel sobrecalentada"
-              width="200"
-              height="200"
+              width="500"
+              height="400"
             />
             <p>
               Es aquella que ha sido expuesta a temperaturas elevadas de forma
@@ -530,8 +583,8 @@
             <img
               src="images/miel_batida.jpg"
               alt="Miel batida"
-              width="200"
-              height="200"
+              width="500"
+              height="400"
             />
             <p>
               La miel batida, también conocida como miel cremosa o miel
@@ -552,9 +605,10 @@
           </p>
           <img
             src="images/nutrientes_miel.jpg"
+            title="Nutrientes de la miel"
             alt="Nutrientes de la miel"
-            width="100%"
-            height="auto"
+            width="1000"
+            height="400"
           />
           <p>
             Ayuda a reforzar el sistema inmunológico: la miel es un alimento
@@ -614,9 +668,10 @@
           </p>
           <img
             src="images/almacenamiento_miel.jpg"
+            title="Almacenamiento de la miel"
             alt="Almacenamiento de la miel"
-            width="100%"
-            height="300"
+            width="1000"
+            height="400"
           />
           <p>
             Elige un ambiente con temperatura constante. La miel se conserva
@@ -632,6 +687,43 @@
             gr./cm<sup>3</sup>.
           </p>
         </section>
+        <nav class="secondary-nav">
+          <ul>
+            <li>
+              <a
+                href="https://www.reinakilama.com/miel-alimento-natural-para-fortalecer-sistema-inmune/#:~:text=Estimula%20el%20sistema%20inmunol%C3%B3gico%20y,mejora%20la%20calidad%20del%20sue%C3%B1o."
+                target="_blank"
+                rel="noopener noreferrer"
+                >La miel y el sistema inmunológico</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.reinakilama.com/miel-alimento-natural-para-fortalecer-sistema-inmune/#:~:text=Propiedades%20antioxidantes%20de%20la%20miel"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Propiedades antioxidantes de la miel</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.reinakilama.com/miel-alimento-natural-para-fortalecer-sistema-inmune/#:~:text=C%C3%B3mo%20la%20miel%20ayuda%20a%20la%20digesti%C3%B3n"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Cómo la miel ayuda a la digestión</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.reinakilama.com/miel-alimento-natural-para-fortalecer-sistema-inmune/#:~:text=Beneficios%20de%20la%20miel%20para%20la%20garganta"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Beneficios de la miel para la garganta</a
+              >
+            </li>
+          </ul>
+        </nav>
+
         <section id="section5">
           <h2>Cómo usar la miel</h2>
           <p>
@@ -640,9 +732,10 @@
           </p>
           <img
             src="images/como_usar_miel.jpg"
+            title="Cómo usar la miel"
             alt="Cómo usar la miel"
-            width="100%"
-            height="300"
+            width="1000"
+            height="400"
           />
           <ul>
             <li>
@@ -664,7 +757,7 @@
             </li>
           </ul>
         </section>
-        <section id="section6" class="videos-youtube">
+        <section id="section7" class="videos-youtube">
           <h2>Videos sobre la miel</h2>
           <p>
             Aquí tienes algunos videos interesantes sobre la miel y sus
@@ -674,7 +767,6 @@
             <iframe
               src="https://www.youtube.com/embed/RF2ZaWByZVk"
               title="COMO se HACE la MIEL de ABEJA🍯| Como HACEN la MIEL las ABEJAS 🐝"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
@@ -692,12 +784,13 @@
             <p>Aquí podrías insertar anuncios o enlaces patrocinados.</p>
             <img
               src="images/miel4.jpg"
+              title="Anuncio de miel"
               alt="Anuncio"
-              width="100%"
+              width="300"
               height="200"
             />
           </div>
-          <div class="more-info">
+          <div class="more-info" id="more-info">
             <a
               href="https://www.example.com/more-info"
               target="_blank"
@@ -716,7 +809,7 @@
               />
             </a>
           </div>
-          <div>
+          <div id="contact">
             <h3>Contacto</h3>
             <p>
               Si tienes alguna pregunta o comentario, no dudes en ponerte en
@@ -735,7 +828,13 @@
         </div>
       </aside>
     </main>
-    <a href="#top" id="scrollToTop"><i class="fa fa-arrow-circle-o-up fa-xl" style="font-size: 25px;" aria-hidden="true"></i></a>
+    <a href="#top" id="scrollToTop"
+      ><i
+        class="fa fa-arrow-circle-o-up fa-xl"
+        style="font-size: 25px"
+        aria-hidden="true"
+      ></i
+    ></a>
     <footer>
       <p>
         Revista Salud&copy; <span id="year"></span> todos los derechos
@@ -785,8 +884,8 @@
         </p>
       </div>
       <address>
-        <strong>Contacto:</strong>
         <p>
+          <strong>Contacto:</strong>
           <a
             href="mailto:contact@revistasalud.com"
             target="_blank"
